@@ -9,7 +9,7 @@ var articleOne={
     title: 'Article one:by Balaji Seshadri',
     date: 'date:Aug 08',
     heading:'Article One',
-    content:` <p>This is content for first article.This is content for first article.
+    content:` <p>This is content for second article.This is content for first article.
                  This is content for first article.This is content for first article.
               </p>
               <p>This is content for first article.This is content for first article.
