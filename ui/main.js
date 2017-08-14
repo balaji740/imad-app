@@ -29,3 +29,15 @@ request.send(null);
   //img.style.marginLeft='100px';  
 //  var interval = setInterval(moveRight,50);
 };
+var nameInput = document.getElementById("name");
+var name = nameInput.value;
+var button = document.getElementById("btn_id");
+button.onclick = function(){
+    var names = ["name1","name2","name3","name4"];
+    var list = " ";
+    for(var i=0; i<names.length;i++){
+       list += '<li>' + names[i] + '</li>';
+      }
+    var ui = document.getElementById('namelist');
+    ui.innerHTML = list;
+};
