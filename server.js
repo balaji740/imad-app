@@ -124,10 +124,18 @@ app.get('/counter', function (req, res) {
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
+var Pool = new Pool(config);
 
 app.get('/test-db', function(req,res){
-    
-})
+   Pool.query('SELECT * from test' , function(err,result){
+       if (err)
+       {
+       res.status(500).send(err.tostring());    
+       } else {
+           res.send(JSON.stringify(result));
+       }
+   }) ;
+});
 //app.get('/submit-name/:name',function(req,res){
   app.get('/submit-name', function(req,res){ 
 //   var name = req.params.name;
