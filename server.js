@@ -115,6 +115,9 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
+app.get('/test-db', function(req,res){
+    
+})
 //app.get('/submit-name/:name',function(req,res){
   app.get('/submit-name', function(req,res){ 
 //   var name = req.params.name;
