@@ -150,21 +150,21 @@ app.get('/test-db', function(req,res){
     res.send(createTemplate(articles[articleName]));
 });
 
-Pool.query("SELECT * FROM articlea WHERE title=" + req.params.articleName, function(err,result) {
+Pool.query("'SELECT * FROM articlea WHERE title='" + 'req.params.articleName + "'", function(err,result) {
     if (err){
         res.status(500).send(err.toString());
     }
     else {
-        if (result.rows.length==0) {
+        if (result.rows.length===0) {
             res.status(404).send('Artincle not Found');
         }
-        else
+        else{
         var articleData = result.rows[0];
-        res.send(createTemplate(articles[articleData]));
-    }  
-} 
+        res.send(createTemplate(articles(articleData));
+        }  
+     } 
+  });
 });
-})
 //app.get('/article-two', function (req, res) {
 //   res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
 //});
