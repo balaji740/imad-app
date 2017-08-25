@@ -149,7 +149,8 @@ app.get('/test-db', function(req,res){
     var articleName = req.params.articleName;
  //   res.send(createTemplate(articles[articleName]));
 
-Pool.query("SELECT * FROM ariclea WHERE title='" + req.params.articleName + "'", function(err,result) {
+//Pool.query("SELECT * FROM ariclea WHERE title='" + req.params.articleName + "'", function(err,result) {
+  Pool.query("SLECT * FROM ariclea WHERE title = $1",[req.params.articleName],function(err,result) { 
     if (err){
         res.status(500).send(err.toString());
     }  else {
