@@ -131,7 +131,7 @@ function hash(input,salt){
     return hashed.toString('hex');
 }
 app.get('/hash/:input' , function(req,res){
-    var hashedString = hash(req.params.input);
+    var hashedString = hash(req.params.input, 'this is some string');
     res.send(hashedString);
 });
 var Pool = new Pool(config);
