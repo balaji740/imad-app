@@ -16,7 +16,7 @@ var config = {
 var app = express();
 app.use(morgan('combined'));
 
-var articles={
+/*var articles={
     'article-one': {
     title: 'Article one:by Balaji Seshadri',
     date: 'date:Aug 08',
@@ -121,7 +121,7 @@ var counter = 0;
 app.get('/counter', function (req, res) {
     counter = counter + 1;
     res.send(counter.toString());
-});
+}); 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
@@ -172,12 +172,16 @@ app.get('/test-db', function(req,res){
         }  
      } 
  
-});
+}); 
  
+}); */
+
+app.get('/article-one', function(req,res){
+    res.sendFile(path.join(_dirname,'ui','article-one.html'));
 });
-//app.get('/article-two', function (req, res) {
-//   res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
-//});
+app.get('/article-two', function (req, res) {
+   res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
+});
 
 //app.get('/article-three', function (req, res) {
 //   res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
