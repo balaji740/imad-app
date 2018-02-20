@@ -16,7 +16,7 @@ var config = {
 var app = express();
 app.use(morgan('combined'));
 
-/*var articles={
+var articles={
     'article-one': {
     title: 'Article one:by Balaji Seshadri',
     date: 'date:Aug 08',
@@ -174,7 +174,7 @@ app.get('/test-db', function(req,res){
  
 }); 
  
-}); */
+}); 
 
 app.get('/article-one', function(req,res){
     res.sendFile(path.join(_dirname, 'ui', 'article-one.html'));
