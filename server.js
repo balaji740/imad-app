@@ -137,6 +137,7 @@ app.get('/hash/:input' , function(req,res){
     res.send(hashedString);
 });
 
+var Pool = new Pool(config);
 app.post('/create-user',function(req,res){
     var username = req.body.username;
     var password = req.body.password;
@@ -152,7 +153,7 @@ app.post('/create-user',function(req,res){
             }
     });
 });
-var Pool = new Pool(config);
+//var Pool = new Pool(config);
 
 app.get('/test-db', function(req,res){
    Pool.query('SELECT * FROM test' , function(err, result){
