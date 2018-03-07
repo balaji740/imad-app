@@ -164,7 +164,7 @@ app.post('/login',function(req,res){
             res.status(500).send(err.toString());
             } else {
                 if (result.rows.length === 0) {
-                    res.send(403).send('userid/password is invalid' );
+                    res.status(403).send('userid/password is invalid' );
                 } else {
                 var dbstring = result.rows[0].password;
                 var salt = dbstring.split('$')[2];
