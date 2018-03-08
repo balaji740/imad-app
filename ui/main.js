@@ -49,7 +49,7 @@ var button = document.getElementById('btn_id');
 //    }
 //  }
 
-button.onClick = function(){
+button.onclick = function(){
   var request = new XMLHttpRequest();
   request.onreadystatechange = function(){
       if (request.readyState === XMLHttpRequest.DONE){
