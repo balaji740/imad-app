@@ -1,1 +1,2 @@
 $ curl -v -XPOST -H 'Content-Type: application/json' --data '{"username": a-app.io/create-user: "password"}' http://balaji740.imad.hasura
+$ curl -v -XPOST -H 'Content-Type: application/json' --data '{"username": "balaji" , "password": "password"}' http://balaji740.imad.hasura-app.io/login
