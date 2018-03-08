@@ -169,7 +169,10 @@ app.post('/login',function(req,res){
                 } else {
                 var dbstring = result.rows[0].password;
                 var salt = dbstring.split('$')[2];
+                  console.log(password);
+                   console.log(salt);
                 var hashedPassword = hash(password,salt);
+                console.log(hashedPassword);
                 if (hashedPassword == dbstring) {
                    res.send('credentials are correct');
                    }else {
