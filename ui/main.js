@@ -76,6 +76,6 @@ button.onclick = function(){
   request.setRequestHeader('Content-Type', 'application/json');
   console.log(password);
   request.send(JSON.stringify({username: username, password: password}));
-   console.log(password);
+   console.log('password-3');
 }; 
     
