@@ -205,6 +205,11 @@ app.get('/check-login', function(req,res){
 });
 //var Pool = new Pool(config);
 
+app.get('/logout', function(req,res){
+delete req.session.auth;
+res.send('logout successful');
+});
+
 app.get('/test-db', function(req,res){
    Pool.query('SELECT * FROM test' , function(err, result){
        if (err)
